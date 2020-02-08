@@ -14,6 +14,8 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'better_errors'
+gem 'binding_of_caller'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
