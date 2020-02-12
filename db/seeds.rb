@@ -23,11 +23,18 @@ belis = User.create!(
   user_type: "advisor"
 )
 
-#User
+#Users
 rmb = User.create!(first_name:"Rose",
   last_name:"Marie",
   email:"rmb@test.com",
   password:"rmbtest",
+  user_type: "user"
+)
+
+mickael = User.create!(first_name:"Mickael",
+  last_name:"Merle",
+  email:"mickael@test.com",
+  password:"michaeltest",
   user_type: "user"
 )
 
@@ -40,25 +47,33 @@ service1 = Service.create!(
   user: belis,
   service_type: "Ongoing Assistance",
   description: "I have 2 years of experience in..",
-  price:"$30"
+  price: "30"
 )
 
 service2 = Service.create!(
   user: belis,
   service_type: "Test Prep",
   description: "I have 2 years of experience in..",
-  price:"$30")
+  price: "30"
+)
 
 # APPOINTMENTS
 Appointment.destroy_all
 
 puts 'Creating "Appointments"...'
 
-Appointment.create!(
+appointment1 = Appointment.create!(
   date: Faker::Date.in_date_period,
   status: ["pending confirmation", "confirmed", "cancelled"].sample,
   service: service1,
   user: rmb,
+)
+
+appointment2 = Appointment.create!(
+  date: Faker::Date.in_date_period,
+  status: ["pending confirmation", "confirmed", "cancelled"].sample,
+  service: service2,
+  user: mickael,
 )
 
 puts 'Finished!'
