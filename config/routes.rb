@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :appointments
   resources :services
+
+  get "dashboard", to: "pages#dashboard"
 end
