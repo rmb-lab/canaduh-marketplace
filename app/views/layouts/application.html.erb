@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>Welcome to Canaduh</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -18,5 +18,17 @@
     <%= yield %>
 
     <%= javascript_pack_tag 'application' %>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+        This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+      </div>
+    </div>
   </body>
 </html>
