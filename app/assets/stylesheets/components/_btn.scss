@@ -1,3 +1,21 @@
+.btn-banner {
+  color: #f9fafb;
+  border: 1px solid #f9fafb;
+  padding: 8px 24px;
+  border-radius: 5px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.1s ease;
+}
+
+.btn-banner:hover {
+  opacity: 0.9;
+  color: #f9fafb;
+}
+
+
+
+
 .btn-light-ghost {
   color: #f9fafb;
   border: 1px solid #f9fafb;
