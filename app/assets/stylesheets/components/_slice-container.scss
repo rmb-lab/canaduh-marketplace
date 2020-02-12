@@ -1,0 +1,10 @@
+.slice-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  padding: 80px;
+}
+
+.slice-container > h1 {
+  font-family: Helvetica, sans-serif;
+}
