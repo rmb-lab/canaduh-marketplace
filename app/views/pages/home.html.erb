@@ -14,16 +14,16 @@
       <!-- HOMEPAGE CARD ROW HEADER -->
       <h1>Discover your path</h1>
           <div class="card-row">
-            <div class="card-path" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(/app/assets/images/student-visa-path.jpg)">
+            <div class="card-path" style="background-image: url(<%= image_path 'student-visa-path.jpg' %>)">
               <p>Student visa</p>
             </div>
-            <div class="card-path" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(/app/assets/images/student-visa-path.jpg)">
+            <div class="card-path" style="background-image: url(<%= image_path 'work-visa-path.jpg' %>)">
               <p>Work visa</p>
             </div>
-            <div class="card-path" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(/app/assets/images/student-visa-path.jpg)">
+            <div class="card-path" style="background-image: url(<%= image_path 'permanent-residency-path.jpg' %>)">
               <p>Permanent residency</p>
             </div>
-            <div class="card-path" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(/app/assets/images/student-visa-path.jpg)">
+            <div class="card-path" style="background-image: url(<%= image_path 'student-visa-path.jpg' %>)">
               <p>Canadian citizenship</p>
             </div>
           </div>
@@ -33,13 +33,13 @@
     <div class="slice-container">
       <h1>Get expert advice</h1>
         <div class="card-row">
-          <div class="card-service" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(/app/assets/images/student-visa-path.jpg)">
+          <div class="card-service" style="background-image: url(<%= image_path 'general-consultation-service.jpg' %>)">
             <p>General consultation</p>
           </div>
-          <div class="card-service" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(/app/assets/images/student-visa-path.jpg)">
+          <div class="card-service" style="background-image: url(<%= image_path 'test-prep-service.jpg' %>)">
             <p>Test preparation</p>
           </div>
-          <div class="card-service" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(/app/assets/images/student-visa-path.jpg)">
+          <div class="card-service" style="background-image:url(<%= image_path 'complete-care-service' %>)">
             <p>Comprehensive assistance</p>
           </div>
         </div>
@@ -48,8 +48,7 @@
 
   <!-- HOMEPAGE ADVISOR CARD ROW -->
     <div class="slice-container">
-
-      <div class="card-row"><h1>Connect with advisors</h1></div>
+      <h1>Connect with advisors</h1>
         <div class="card-row">
           <div class="card-advisor">
             <img src="https://res.cloudinary.com/p-m-b/image/upload/v1581469552/canaduh/sophie-advisor_ygklbz.jpg">
@@ -76,7 +75,8 @@
             <p><button class="btn-flat">Connect</button></p>
           </div>
         </div>
+        <p>Browse advisors</p>
     </div>
     </div>
-    </div>
+  </div>
 </div>
