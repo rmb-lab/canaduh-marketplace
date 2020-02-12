@@ -1,5 +1,6 @@
 <h1>Dashboard</h1>
 
+<h2>Appointments as User</h2>
 <% @appointments.each do |appointment| %>
   <div style="display: flex">
     <ul>
@@ -12,6 +13,22 @@
   </div>
 <% end %>
 
+<h2>Services for Advisor</h2>
+<% @services.each do |service| %>
+  <div style="display: flex">
+    <ul>
+      <li>
+        <%= service.service_type %>
+        <br>
+        <%= service.description %>
+        <br>
+        <%= service.price %>
+      </li>
+    </ul>
+  </div>
+<% end %>
+
+<h2>Appointments as Advisor</h2>
 <% @advisor_appointments.each do |advisor_appointment| %>
   <div style="display: flex">
     <ul>

@@ -19,14 +19,16 @@ belis = User.create!(
   first_name:"Belis",
   last_name:"Turegun",
   email:"belis@test.com",
-  password:"belistest"
+  password:"belistest",
+  user_type: "advisor"
 )
 
 #User
 rmb = User.create!(first_name:"Rose",
   last_name:"Marie",
   email:"rmb@test.com",
-  password:"rmbtest"
+  password:"rmbtest",
+  user_type: "user"
 )
 
 # SERVICES
@@ -56,7 +58,7 @@ Appointment.create!(
   date: Faker::Date.in_date_period,
   status: ["pending confirmation", "confirmed", "cancelled"].sample,
   service: service1,
-  user: belis
+  user: rmb,
 )
 
 puts 'Finished!'
