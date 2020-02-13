@@ -1,0 +1,8 @@
+show.html.erb
+<h1> <%= @service.service_type %> </h1>
+<p> Service Type:  <%=@service.service_type %> </p>
+<p> Service Description:  <%=@service.description %> </p>
+
+<p> Service provided by <%= @service.user.first_name %> <%= @service.user.last_name %> </p>
+
+<%= link_to "Back to list of all services ", services_path %>
