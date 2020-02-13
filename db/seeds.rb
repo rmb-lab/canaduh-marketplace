@@ -23,6 +23,14 @@ belis = User.create!(
   user_type: "advisor"
 )
 
+peter = User.create!(
+  first_name:"Peter",
+  last_name:"Table",
+  email:"peter@test.com",
+  password:"petertest",
+  user_type: "advisor"
+)
+
 #Users
 rmb = User.create!(first_name:"Rose",
   last_name:"Marie",
@@ -53,6 +61,15 @@ patrick = User.create!(
   password:"patricktest",
   user_type: "user"
 )
+
+diana = User.create!(
+  first_name:"Diana",
+  last_name:"Ross",
+  email:"diana@test.com",
+  password:"dianatest",
+  user_type: "user"
+)
+
 
 # SERVICES
 Service.destroy_all
