@@ -1,0 +1,10 @@
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.card-row > h1 {
+  align-items: flex-start;
+}
