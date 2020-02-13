@@ -1,42 +1,55 @@
-<h1>Dashboard</h1>
+<div class="container">
+  <br>
+  <h1>Dashboard</h1>
+  <br>
 
-<h2>Appointments as User</h2>
-<% @appointments.each do |appointment| %>
-  <div style="display: flex">
-    <ul>
-      <li>
-        <%= appointment.date %>
-        <br>
-        <%= appointment.status %>
-       </li>
-    </ul>
-  </div>
-<% end %>
+  <% if @current_user.user_type == "user" %>
+    <h2>My Appointments</h2>
+    <% @appointments.each do |appointment| %>
+      <div style="display: flex">
+        <ul>
+          <li>
+            Appointment with <strong><%= Service.find(appointment.service_id).user.first_name %> <%= Service.find(appointment.service_id).user.last_name %></strong>
+            on <strong><%= appointment.date %> </strong>
+            <br>
+            Status: <strong><%= appointment.status %></strong>
+            <pre><%= link_to "Edit", "#" %> <%= link_to "Delete", "#", method: :delete %></pre>
+        </ul>
+      </div>
+    <% end %>
 
-<h2>Services for Advisor</h2>
-<% @services.each do |service| %>
-  <div style="display: flex">
-    <ul>
-      <li>
-        <%= service.service_type %>
-        <br>
-        <%= service.description %>
-        <br>
-        <%= service.price %>
-      </li>
-    </ul>
-  </div>
-<% end %>
+  <% else %>
 
-<h2>Appointments as Advisor</h2>
-<% @advisor_appointments.each do |advisor_appointment| %>
-  <div style="display: flex">
-    <ul>
-      <li>
-        <%= advisor_appointment.date %>
-        <br>
-        <%= advisor_appointment.status %>
-      </li>
-    </ul>
-  </div>
-<% end %>
+    <h2>My Services</h2>
+    <% @services.each do |service| %>
+      <div style="display: flex">
+        <ul>
+          <li>
+            Service: <strong><%= service.service_type %></strong>
+            <br>
+            Description: <%= service.description %>
+            <br>
+            Pricing: <strong>$<%= service.price %></strong>
+            <pre><%= link_to "Edit", "#" %> <%= link_to "Delete", "#", method: :delete %></pre>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+
+    <h2>My Appointments</h2>
+    <% @advisor_appointments.each do |advisor_appointment| %>
+      <div style="display: flex">
+        <ul>
+          <li>
+            Appointment with <strong><%= User.find(advisor_appointment.user_id).first_name %> <%= User.find(advisor_appointment.user_id).last_name %></strong>
+            on <strong><%= advisor_appointment.date %> </strong>
+            <br>
+            Status: <strong><%= advisor_appointment.status %></strong>
+            <br>
+            <pre><%= link_to "Edit", "#" %> <%= link_to "Delete", "dahsboard_path", method: :delete %></pre>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+</div>

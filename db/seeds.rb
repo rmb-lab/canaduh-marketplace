@@ -14,7 +14,7 @@ User.destroy_all
 
 puts 'Creating "Users"...'
 
-#Advisor
+#Advisors
 belis = User.create!(
   first_name:"Belis",
   last_name:"Turegun",
@@ -38,6 +38,22 @@ mickael = User.create!(first_name:"Mickael",
   user_type: "user"
 )
 
+lou = User.create!(
+  first_name:"Lou",
+  last_name:"Reed",
+  email:"lou@test.com",
+  password:"loutest",
+  user_type: "user"
+)
+
+patrick = User.create!(
+  first_name:"Patrick",
+  last_name:"Bourget",
+  email:"patrick@test.com",
+  password:"patricktest",
+  user_type: "user"
+)
+
 # SERVICES
 Service.destroy_all
 
@@ -46,15 +62,22 @@ puts 'Creating "Services"...'
 service1 = Service.create!(
   user: belis,
   service_type: "Ongoing Assistance",
-  description: "I have 2 years of experience in..",
-  price: "30"
+  description: "Specialized in Working Visa",
+  price: "60"
 )
 
 service2 = Service.create!(
   user: belis,
   service_type: "Test Prep",
-  description: "I have 2 years of experience in..",
+  description: "Specialized in Working Visa",
   price: "30"
+)
+
+service3 = Service.create!(
+  user: belis,
+  service_type: "General Consultation",
+  description: "Specialized in Working Visa",
+  price: "20"
 )
 
 # APPOINTMENTS
@@ -74,6 +97,20 @@ appointment2 = Appointment.create!(
   status: ["pending confirmation", "confirmed", "cancelled"].sample,
   service: service2,
   user: mickael,
+)
+
+appointment3 = Appointment.create!(
+  date: Faker::Date.in_date_period,
+  status: ["pending confirmation", "confirmed", "cancelled"].sample,
+  service: service3,
+  user: lou,
+)
+
+appointment4 = Appointment.create!(
+  date: Faker::Date.in_date_period,
+  status: ["pending confirmation", "confirmed", "cancelled"].sample,
+  service: service3,
+  user: patrick,
 )
 
 puts 'Finished!'
