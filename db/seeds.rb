@@ -77,19 +77,19 @@ puts 'Creating "Services"...'
 service1 = Service.create!(
   user: belis,
   service_type: "Ongoing Assistance",
-  description: "Specialized in Working Visa",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh urna, viverra eu risus sit amet, suscipit luctus metus. Maecenas facilisis mauris non dui semper sodales. Proin a dolor elementum ligula pulvinar efficitur nec eget est. Mauris convallis ultricies justo a pellentesque. Aliquam vitae ultrices nisi, id faucibus sem. Vivamus vitae dignissim diam. Sed in dictum felis. Morbi sit amet.",
   price: "60"
 )
 service2 = Service.create!(
   user: belis,
   service_type: "Test Prep",
-  description: "Specialized in Working Visa",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh urna, viverra eu risus sit amet, suscipit luctus metus. Maecenas facilisis mauris non dui semper sodales. Proin a dolor elementum ligula pulvinar efficitur nec eget est. Mauris convallis ultricies justo a pellentesque. Aliquam vitae ultrices nisi, id faucibus sem. Vivamus vitae dignissim diam. Sed in dictum felis. Morbi sit amet.",
   price: "30"
 )
 service3 = Service.create!(
   user: belis,
   service_type: "General Consultation",
-  description: "Specialized in Working Visa",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh urna, viverra eu risus sit amet, suscipit luctus metus. Maecenas facilisis mauris non dui semper sodales. Proin a dolor elementum ligula pulvinar efficitur nec eget est. Mauris convallis ultricies justo a pellentesque. Aliquam vitae ultrices nisi, id faucibus sem. Vivamus vitae dignissim diam. Sed in dictum felis. Morbi sit amet.",
   price: "20"
 )
 
