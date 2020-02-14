@@ -1,0 +1,17 @@
+.slice-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 40vh;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 40px;
+}
+
+.slice-container > h1 {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.8em;
+}
+
+// .slice-container > i {
+//   margin-top: 5px;
+// }
