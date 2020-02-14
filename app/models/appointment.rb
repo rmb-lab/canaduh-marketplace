@@ -1,5 +1,6 @@
 class Appointment < ApplicationRecord
   APPOINTMENT_OPTIONS = ["pending confirmation", "confirmed", "cancelled"]
+  
   belongs_to :service
   belongs_to :user
 

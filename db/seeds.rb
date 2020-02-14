@@ -32,6 +32,7 @@ peter = User.create!(
   password:"petertest",
   user_type: "advisor"
 )
+
 #Users
 rmb = User.create!(
   first_name:"Rose",
