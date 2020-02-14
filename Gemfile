@@ -18,6 +18,7 @@ gem 'webpacker'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'devise'
+gem 'faker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

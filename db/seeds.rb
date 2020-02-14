@@ -5,8 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
-Service.destroy_all
 
 # belis = User.create!(first_name:"Belis", last_name:"Turegun", email:"belis@test.com", password:"belistest")
 # Service.create!(user: belis, service_type: "Ongoing Assistance", description: "I have 2 years of experience in..", price:"$30")
@@ -21,9 +19,11 @@ Service.destroy_all
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 puts 'Cleaning database...'
+
 # USERS
 User.destroy_all
 puts 'Creating "Users"...'
+
 #Advisors
 belis = User.create!(
   first_name:"Belis",
@@ -39,6 +39,7 @@ peter = User.create!(
   password:"petertest",
   user_type: "advisor"
 )
+
 #Users
 rmb = User.create!(first_name:"Rose",
   last_name:"Marie",
@@ -73,9 +74,11 @@ diana = User.create!(
   password:"dianatest",
   user_type: "user"
 )
+
 # SERVICES
 Service.destroy_all
 puts 'Creating "Services"...'
+
 service1 = Service.create!(
   user: belis,
   service_type: "Ongoing Assistance",
@@ -97,6 +100,7 @@ service3 = Service.create!(
 # APPOINTMENTS
 Appointment.destroy_all
 puts 'Creating "Appointments"...'
+
 appointment1 = Appointment.create!(
   date: Faker::Date.in_date_period,
   status: ["pending confirmation", "confirmed", "cancelled"].sample,
@@ -121,4 +125,5 @@ appointment4 = Appointment.create!(
   service: service3,
   user: patrick,
 )
+
 puts 'Finished!'
