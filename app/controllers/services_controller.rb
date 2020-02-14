@@ -4,17 +4,18 @@ class ServicesController < ApplicationController
   end
 
   def new
-    @service = service.new
+    @service = Service.new
   end
 
   def create
-    @service = service.new(params.require(:service).permit(:title, :details, :completed))
+    @service = Service.new(params.require(:service).permit(:title, :details, :completed))
     @service.save
     redirect_to(services_path)
   end
 
   def show
     set_service
+    @appointment = Appointment.new
   end
 
   def edit
