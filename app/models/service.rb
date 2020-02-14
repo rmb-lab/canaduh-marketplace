@@ -5,5 +5,5 @@ class Service < ApplicationRecord
   validates :price, presence: true
   validates_inclusion_of :service_type, in: PROPERTY_OPTIONS
   belongs_to :user
-  has_many :appointments
+  has_many :appointments, dependent: :destroy
 end
