@@ -1,33 +1,37 @@
 <div class="wrapper">
   <div class="main">
-  <div class="cards">
-      <% @services.each do |service| %>
-        <div class="service-result-card">
-         <div class="service-result-card-image">
-            <img src="https://res.cloudinary.com/p-m-b/image/upload/v1581469552/canaduh/sophie-advisor_ygklbz.jpg">
-         </div>
+    <div class="slice-container">
+      <h1>Browse services</h1>
+        <div class="cards">
+            <% @services.each do |service| %>
+              <div class="service-result-card">
+               <div class="service-result-card-image">
+                  <img src="https://res.cloudinary.com/p-m-b/image/upload/v1581469552/canaduh/sophie-advisor_ygklbz.jpg">
+               </div>
 
-          <div class="service-result-card-info">
-            <div class="service-result-card-row">
-              <p class="service-result-card-feature-badge">FEATURED</p>
-              <p class="service-result-card-path">Specific path</p>
-            </div>
-            <div class="service-result-card-row">
-              <h2><%= service.service_type.upcase %></h2>
-            </div>
-            <div class="service-result-card-row">
-              <p><%= service.description %></p>
-            </div>
-              <div class="service-result-card-price">
-                <p>$<%= service.price %> CAD/hour</p>
-                <p><%= link_to 'See availability', service, class: "btn-availability"  %> </p>
-              </div>
+                <div class="service-result-card-info">
+                  <div class="service-result-card-row">
+                    <p class="service-result-card-feature-badge">FEATURED</p>
+                    <p class="service-result-card-path">Specific path</p>
+<!--                     <p>with <%= service.user.first_name %> <%= service.user.last_name %></p> -->
+                  </div>
+                  <div class="service-result-card-row">
+                    <h2><%= service.service_type.upcase %></h2>
 
-            </div>
-          </div>
-        <% end %>
-  </div>
+                  </div>
 
-  </div>
+                  <div class="service-result-card-row">
+                    <p><%= service.description %></p>
+                  </div>
+                    <div class="service-result-card-price">
+                      <p>$<%= service.price %> CAD/hour</p>
+                      <p><%= link_to 'See availability', service, class: "btn-availability"  %> </p>
+                    </div>
+
+                  </div>
+                </div>
+              <% end %>
+        </div>
+    </div>
   </div>
 </div>
