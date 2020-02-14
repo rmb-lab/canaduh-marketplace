@@ -10,13 +10,6 @@
 # Service.create!(user: belis, service_type: "Ongoing Assistance", description: "I have 2 years of experience in..", price:"$30")
 # Service.create!(user: belis, service_type: "Test Prep", description: "I have 2 years of experience in..", price:"$30")
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 puts 'Cleaning database...'
 
@@ -41,13 +34,15 @@ peter = User.create!(
 )
 
 #Users
-rmb = User.create!(first_name:"Rose",
+rmb = User.create!(
+  first_name:"Rose",
   last_name:"Marie",
   email:"rmb@test.com",
   password:"rmbtest",
   user_type: "user"
 )
-mickael = User.create!(first_name:"Mickael",
+mickael = User.create!(
+  first_name:"Mickael",
   last_name:"Merle",
   email:"mickael@test.com",
   password:"michaeltest",
@@ -97,6 +92,7 @@ service3 = Service.create!(
   description: "Specialized in Working Visa",
   price: "20"
 )
+
 # APPOINTMENTS
 Appointment.destroy_all
 puts 'Creating "Appointments"...'
