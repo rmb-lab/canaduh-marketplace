@@ -6,8 +6,120 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create([{ first_name: 'Mickael'}, {last_name: 'Merle'}, {email: 'mickael@gmail.com'}])
-users = User.create([{ first_name: 'Rose Marie'}, {last_name: 'Be Trong'}, {email: 'rosemarie@gmail.com'}])
-users = User.create([{ first_name: 'Patrick'}, {last_name: 'Bourget'}, {email: 'patrick@gmail.com'}])
-users = User.create([{ first_name: 'Belis'}, {last_name: 'Turegon'}, {email: 'belis@gmail.com'}])
+# belis = User.create!(first_name:"Belis", last_name:"Turegun", email:"belis@test.com", password:"belistest")
+# Service.create!(user: belis, service_type: "Ongoing Assistance", description: "I have 2 years of experience in..", price:"$30")
+# Service.create!(user: belis, service_type: "Test Prep", description: "I have 2 years of experience in..", price:"$30")
 
+require 'faker'
+puts 'Cleaning database...'
+
+# USERS
+User.destroy_all
+puts 'Creating "Users"...'
+
+#Advisors
+belis = User.create!(
+  first_name:"Belis",
+  last_name:"Turegun",
+  email:"belis@test.com",
+  password:"belistest",
+  user_type: "advisor"
+)
+peter = User.create!(
+  first_name:"Peter",
+  last_name:"Table",
+  email:"peter@test.com",
+  password:"petertest",
+  user_type: "advisor"
+)
+
+#Users
+rmb = User.create!(
+  first_name:"Rose",
+  last_name:"Marie",
+  email:"rmb@test.com",
+  password:"rmbtest",
+  user_type: "user"
+)
+mickael = User.create!(
+  first_name:"Mickael",
+  last_name:"Merle",
+  email:"mickael@test.com",
+  password:"michaeltest",
+  user_type: "user"
+)
+lou = User.create!(
+  first_name:"Lou",
+  last_name:"Reed",
+  email:"lou@test.com",
+  password:"loutest",
+  user_type: "user"
+)
+patrick = User.create!(
+  first_name:"Patrick",
+  last_name:"Bourget",
+  email:"patrick@test.com",
+  password:"patricktest",
+  user_type: "user"
+)
+diana = User.create!(
+  first_name:"Diana",
+  last_name:"Ross",
+  email:"diana@test.com",
+  password:"dianatest",
+  user_type: "user"
+)
+
+# SERVICES
+Service.destroy_all
+puts 'Creating "Services"...'
+
+service1 = Service.create!(
+  user: belis,
+  service_type: "Ongoing Assistance",
+  description: "Specialized in Working Visa",
+  price: "60"
+)
+service2 = Service.create!(
+  user: belis,
+  service_type: "Test Prep",
+  description: "Specialized in Working Visa",
+  price: "30"
+)
+service3 = Service.create!(
+  user: belis,
+  service_type: "General Consultation",
+  description: "Specialized in Working Visa",
+  price: "20"
+)
+
+# APPOINTMENTS
+Appointment.destroy_all
+puts 'Creating "Appointments"...'
+
+appointment1 = Appointment.create!(
+  date: Faker::Date.in_date_period,
+  status: ["pending confirmation", "confirmed", "cancelled"].sample,
+  service: service1,
+  user: rmb,
+)
+appointment2 = Appointment.create!(
+  date: Faker::Date.in_date_period,
+  status: ["pending confirmation", "confirmed", "cancelled"].sample,
+  service: service2,
+  user: mickael,
+)
+appointment3 = Appointment.create!(
+  date: Faker::Date.in_date_period,
+  status: ["pending confirmation", "confirmed", "cancelled"].sample,
+  service: service3,
+  user: lou,
+)
+appointment4 = Appointment.create!(
+  date: Faker::Date.in_date_period,
+  status: ["pending confirmation", "confirmed", "cancelled"].sample,
+  service: service3,
+  user: patrick,
+)
+
+puts 'Finished!'

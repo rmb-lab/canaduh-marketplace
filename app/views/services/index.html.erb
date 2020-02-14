@@ -1,0 +1,9 @@
+index.html.erb
+<div class="cards">
+    <% @services.each do |service| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <h2> <%= service.service_type %> </h2>
+      <p><%= link_to 'See details', service %> </p>
+    </div>
+  <% end %>
+</div>
