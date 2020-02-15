@@ -1,6 +1,7 @@
 .service-booking-details-row {
   display: flex;
   flex-direction: row;
+  min-width: 240px;
 }
 
 .service-booking-advisor-info {
@@ -9,6 +10,7 @@
   border-radius: 10px;
   width: 480px;
   height: auto;
+  padding: 10px;
 }
 
 
