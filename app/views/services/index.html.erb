@@ -11,9 +11,10 @@
 
                 <div class="service-result-card-info">
                   <div class="service-result-card-row">
-                    <p class="service-result-card-feature-badge">FEATURED</p>
-                    <p class="service-result-card-path">Specific path</p>
-<!--                     <p>with <%= service.user.first_name %> <%= service.user.last_name %></p> -->
+                    <% if service.user.featured == true %>
+                      <p class="service-result-card-feature-badge">FEATURED</p>
+                    <% end %>
+                    <p class="service-result-card-path"><%= service.path %></p>
                   </div>
                   <div class="service-result-card-row">
                     <h2><%= service.service_type.upcase %></h2>
