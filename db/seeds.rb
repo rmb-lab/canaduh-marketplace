@@ -23,14 +23,110 @@ belis = User.create!(
   last_name:"Turegun",
   email:"belis@test.com",
   password:"belistest",
-  user_type: "advisor"
+  user_type: "advisor",
+  username: "belist",
+  location: "Montreal",
+  user_bio: Faker::Quote.matz,
+  specialty: ["student visa", "work visa", "permanent residency", "canadian citizenship"].sample
 )
 peter = User.create!(
   first_name:"Peter",
   last_name:"Table",
   email:"peter@test.com",
   password:"petertest",
-  user_type: "advisor"
+  user_type: "advisor",
+  username: "petert",
+  location: "Toronto",
+  user_bio: Faker::Quote.matz,
+  specialty: ["student visa", "work visa", "permanent residency", "canadian citizenship"].sample
+)
+justin = User.create!(
+  first_name:"Justin",
+  last_name:"Trudeau",
+  email:"justin@test.com",
+  password:"justintest",
+  user_type: "advisor",
+  username: "justint",
+  location: "Ottawa",
+  user_bio: Faker::Quote.matz,
+  specialty: ["student visa", "work visa", "permanent residency", "canadian citizenship"].sample
+)
+celine = User.create!(
+  first_name:"Celine",
+  last_name:"Dion",
+  email:"celine@test.com",
+  password:"celinetest",
+  user_type: "advisor",
+  username: "celinet",
+  location: "Montreal",
+  user_bio: Faker::Quote.matz,
+  specialty: ["student visa", "work visa", "permanent residency", "canadian citizenship"].sample
+)
+guy = User.create!(
+  first_name:"Guy",
+  last_name:"Laliberte",
+  email:"guy@test.com",
+  password:"guytest",
+  user_type: "advisor",
+  username: "guyl",
+  location: "Montreal",
+  user_bio: Faker::Quote.matz,
+  specialty: ["student visa", "work visa", "permanent residency", "canadian citizenship"].sample
+)
+mg = User.create!(
+  first_name:"Marie",
+  last_name:"Gabrielle",
+  email:"mg@test.com",
+  password:"mgtest",
+  user_type: "advisor",
+  username: "mg",
+  location: "Montreal",
+  user_bio: Faker::Quote.matz,
+  specialty: ["student visa", "work visa", "permanent residency", "canadian citizenship"].sample
+)
+victor = User.create!(
+  first_name:"Victor",
+  last_name:"Bianchi",
+  email:"victor@test.com",
+  password:"victortest",
+  user_type: "advisor",
+  username: "victorb",
+  location: "Montreal",
+  user_bio: Faker::Quote.matz,
+  specialty: ["student visa", "work visa", "permanent residency", "canadian citizenship"].sample
+)
+paul = User.create!(
+  first_name:"Paul",
+  last_name:"McCartney",
+  email:"paul@test.com",
+  password:"paultest",
+  user_type: "advisor",
+  username: "pault",
+  location: "Montreal",
+  user_bio: Faker::Quote.matz,
+  specialty: ["student visa", "work visa", "permanent residency", "canadian citizenship"].sample
+)
+maria = User.create!(
+  first_name:"Maria",
+  last_name:"Carrey",
+  email:"maria@test.com",
+  password:"mariatest",
+  user_type: "advisor",
+  username: "mariac",
+  location: "Vancouver",
+  user_bio: Faker::Quote.matz,
+  specialty: ["student visa", "work visa", "permanent residency", "canadian citizenship"].sample
+)
+travis = User.create!(
+  first_name:"Travis",
+  last_name:"Scott",
+  email:"travis@test.com",
+  password:"travistest",
+  user_type: "advisor",
+  username: "traviss",
+  location: "Toronto",
+  user_bio: Faker::Quote.matz,
+  specialty: ["student visa", "work visa", "permanent residency", "canadian citizenship"].sample
 )
 
 #Users
@@ -39,35 +135,50 @@ rmb = User.create!(
   last_name:"Marie",
   email:"rmb@test.com",
   password:"rmbtest",
-  user_type: "user"
+  user_type: "user",
+  username: "rmb",
+  location: "Montreal",
+  user_bio: Faker::Quote.matz
 )
 mickael = User.create!(
   first_name:"Mickael",
   last_name:"Merle",
   email:"mickael@test.com",
-  password:"michaeltest",
-  user_type: "user"
+  password:"mickaeltest",
+  user_type: "user",
+  username: "mickaelm",
+  location: "Montreal",
+  user_bio: Faker::Quote.matz
 )
 lou = User.create!(
   first_name:"Lou",
   last_name:"Reed",
   email:"lou@test.com",
   password:"loutest",
-  user_type: "user"
+  user_type: "user",
+  username: "loulou",
+  location: "Montreal",
+  user_bio: Faker::Quote.matz
 )
 patrick = User.create!(
   first_name:"Patrick",
   last_name:"Bourget",
   email:"patrick@test.com",
   password:"patricktest",
-  user_type: "user"
+  user_type: "user",
+  username: "patrickb",
+  location: "Montreal",
+  user_bio: Faker::Quote.matz
 )
 diana = User.create!(
   first_name:"Diana",
   last_name:"Ross",
   email:"diana@test.com",
   password:"dianatest",
-  user_type: "user"
+  user_type: "user",
+  username: "dianaqueen",
+  location: "Montreal",
+  user_bio: Faker::Quote.matz
 )
 
 # SERVICES
