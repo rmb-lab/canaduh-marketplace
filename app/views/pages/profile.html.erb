@@ -2,7 +2,9 @@
 
   <h1>Welcome <strong><%= @first_name %></strong></h1>
 
-  <p>First Name: <%= @first_name %></p><pre><%= link_to "Edit", "#" %></pre>
+  <pre><%= link_to "Edit Profile", edit_user_registration_path %></pre>
+
+  <p>First Name: <%= @first_name %></p>
   <p>Last Name: <%= @last_name %></p>
   <p>Username: <%= @username %></p>
   <p>Email: <%= @email%></p>
