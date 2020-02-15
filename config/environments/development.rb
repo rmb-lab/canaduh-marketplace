@@ -9,6 +9,7 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+
   # Show full error reports.
   config.consider_all_requests_local = true
 
@@ -48,10 +49,12 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = false
+  config.assets.debug = true
 
   # Suppress logger output for asset requests.
-  config.assets.quiet = true
+  config.assets.quiet = false
+
+  config.assets.compile = true
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
