@@ -8,9 +8,14 @@ class ServicesController < ApplicationController
   end
 
   def create
-    @service = Service.new(params.require(:service).permit(:title, :details, :completed))
-    @service.save
-    redirect_to(services_path)
+    # @user = User.find(params[:user_id])
+    @service = Service.new(params.require(:service).permit(:service_type, :description, :price))
+    @service.user = current_user
+    if @service.save!
+      redirect_to dashboard_path
+    else
+      redirect_to(services_path)
+    end
   end
 
   def show
@@ -24,7 +29,7 @@ class ServicesController < ApplicationController
 
   def update
     set_service
-    @service.update(params.require(:service).permit(:title, :details, :completed))
+    @service.update(params.require(:service).permit(:service_type, :description, :price))
     redirect_to(service_path)
   end
 

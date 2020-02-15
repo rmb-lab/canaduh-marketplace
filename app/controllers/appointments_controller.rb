@@ -7,6 +7,11 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new
   end
 
+  def after_sign_in_path_for(resource)
+    p "*****************************************************************************"
+    p resource
+  end
+
   # POST #
   def create
     @appointment = Appointment.new(appointment_params)
