@@ -1,15 +1,23 @@
-<div class="container">
-
-  <h1>Welcome <strong><%= @first_name %></strong></h1>
-
-  <p>First Name: <%= @first_name %></p><pre><%= link_to "Edit", "#" %></pre>
-  <p>Last Name: <%= @last_name %></p>
-  <p>Username: <%= @username %></p>
-  <p>Email: <%= @email%></p>
-  <p>Location: <%= @location%></p>
-  <p>Bio: <%= @bio %></p>
-  <% if @user_type == "advisor" %>
-    <p>Specialty: <%= @specialty %></p>
-  <% end %>
+<div class="wrapper">
+  <div class="main">
+    <div class="container">
+      <h1>Welcome <strong><%= @first_name %></strong></h1>
+      <div class="profile-card-image">
+        <img src="https://res.cloudinary.com/p-m-b/image/upload/v1581469552/canaduh/sophie-advisor_ygklbz.jpg">
+      </div>
+      <div class="profile-info">
+      <p><strong>First Name:</strong> <%= @first_name %></p></pre>
+      <p><strong>Last Name:</strong> <%= @last_name %></p>
+      <p><strong>Location:</strong> <%= @location%></p>
+      <p><strong>Biography:</strong> <%= @bio %></p>
+<!--       <p>Username: <%= @username %></p> -->
+      <p><strong>Email:</strong> <%= @email%></p>
+      <% if @user_type == "advisor" %>
+      <h2>Advisor properties</h2>
+        <p><strong>Specialty:</strong> <%= @specialty %></p>
+      <% end %>
+      <pre><%= link_to "Edit profile", "#" %>
+        </div>
+    </div>
+  </div>
 </div>
-
