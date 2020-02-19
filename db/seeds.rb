@@ -229,25 +229,25 @@ puts 'Creating "Appointments"...'
 
 appointment1 = Appointment.create!(
   date: Faker::Date.in_date_period,
-  status: ["pending confirmation", "confirmed", "cancelled"].sample,
+  status: ["pending confirmation", "confirmed", "declined"].sample,
   service: service1,
   user: rmb,
 )
 appointment2 = Appointment.create!(
   date: Faker::Date.in_date_period,
-  status: ["pending confirmation", "confirmed", "cancelled"].sample,
+  status: ["pending confirmation", "confirmed", "declined"].sample,
   service: service2,
   user: mickael,
 )
 appointment3 = Appointment.create!(
   date: Faker::Date.in_date_period,
-  status: ["pending confirmation", "confirmed", "cancelled"].sample,
+  status: ["pending confirmation", "confirmed", "declined"].sample,
   service: service3,
   user: lou,
 )
 appointment4 = Appointment.create!(
   date: Faker::Date.in_date_period,
-  status: ["pending confirmation", "confirmed", "cancelled"].sample,
+  status: ["pending confirmation", "confirmed", "declined"].sample,
   service: service3,
   user: patrick,
 )
