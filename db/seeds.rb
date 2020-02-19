@@ -211,37 +211,58 @@ puts 'Creating "Services"...'
 service1 = Service.create!(
   user: belis,
   service_type: "Ongoing Assistance",
-  description: Faker::Quote.yoda,
+  description: "Assistance from start to finish in helping you prepare documentation for your Canadian student visa application process. Pre-planned and scheduled follow-up appointments give you the checkpoints along the way to ensure you are confident and stress free. This service guarantees a tailor fit solution to your immigration needs.",
   path: "Student Visa",
-  price: "60"
+  price: "499"
 )
 service2 = Service.create!(
-  user: belis,
+  user: travis,
   service_type: "Test Prep",
-  description: Faker::Quote.yoda,
-  path: "Work Visa",
-  price: "30"
+  description: "Professional tutoring to help prepare for your permanent residency exams. Cover the Canadian value chart, written and spoken language test prep. This service includes 3hrs of one on one sessions booked at your convenience.",
+  path: "Permanent Residency",
+  price: "99"
 )
 service3 = Service.create!(
-  user: belis,
+  user: paul,
   service_type: "General Consultation",
-  description: Faker::Quote.yoda,
+  description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
   path: "Canadian Citizenship",
-  price: "20"
+  price: "129"
 )
 service4 = Service.create!(
-  user: peter,
+  user: maria,
   service_type: "Test Prep",
   path: "Work Visa",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh urna, viverra eu risus sit amet, suscipit luctus metus. Maecenas facilisis mauris non dui semper sodales. Proin a dolor elementum ligula pulvinar efficitur nec eget est. Mauris convallis ultricies justo a pellentesque. Aliquam vitae ultrices nisi, id faucibus sem. Vivamus vitae dignissim diam. Sed in dictum felis. Morbi sit amet.",
-  price: "30"
+  description: "Professional tutoring to help prepare for your work permit process. Cover the Canadian value chart, written and spoken language test prep and job interview coaching. This service includes 3hrs of one on one sessions booked at your convenience.",
+  price: "149"
 )
 service5 = Service.create!(
-  user: peter,
+  user: justin,
   service_type: "General Consultation",
   path: "Canadian Citizenship",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh urna, viverra eu risus sit amet, suscipit luctus metus. Maecenas facilisis mauris non dui semper sodales. Proin a dolor elementum ligula pulvinar efficitur nec eget est. Mauris convallis ultricies justo a pellentesque. Aliquam vitae ultrices nisi, id faucibus sem. Vivamus vitae dignissim diam. Sed in dictum felis. Morbi sit amet.",
-  price: "20"
+  description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
+  price: "99"
+)
+service6 = Service.create!(
+  user: victor,
+  service_type: "Ongoing Assistance",
+  description: "Assistance from start to finish in helping you prepare documentation for your Canadian student visa application process. Pre-planned and scheduled follow-up appointments give you the checkpoints along the way to ensure you are confident and stress free. This service guarantees a tailor fit solution to your immigration needs.",
+  path: "Student Visa",
+  price: "799"
+)
+service7 = Service.create!(
+  user: celine,
+  service_type: "Test Prep",
+  path: "Work Visa",
+  description: "Professional tutoring to help prepare for your work permit process. Cover the Canadian value chart, written and spoken language test prep and job interview coaching. This service includes 3hrs of one on one sessions booked at your convenience.",
+  price: "149"
+)
+service8 = Service.create!(
+  user: guy,
+  service_type: "General Consultation",
+  path: "Canadian Citizenship",
+  description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
+  price: "99"
 )
 
 # APPOINTMENTS
