@@ -66,18 +66,24 @@
         <% @service.reviews.each do |review| %>
           <li> <%= review.user.first_name %>
             <br>
+            <%= review.created_at %>
+            <br>
             <%= review.title %>
             <br>
-            <%= review.rating %>
+            <% review.rating.times do %>
+              <i class="far fa-star"></i>
+            <% end %>
             <br>
             <%= review.content %>
           </li>
         <% end %>
       </ul>
 
+    <% if current_user.user_type == "user" %>
       <%= link_to new_service_review_path(@service)  do %>
         <i class="fas fa-pen"></i> Add a Review
       <% end %>
+    <% end %>
 
     </div>
 
