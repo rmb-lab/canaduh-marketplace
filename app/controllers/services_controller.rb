@@ -1,6 +1,7 @@
 class ServicesController < ApplicationController
   def index
     @services = Service.all
+    @reviews = Review.all
   end
 
   def new
@@ -21,6 +22,7 @@ class ServicesController < ApplicationController
   def show
     set_service
     @appointment = Appointment.new
+    @average = average(@service)
   end
 
   def edit
@@ -37,6 +39,18 @@ class ServicesController < ApplicationController
     set_service
     @service.destroy
     redirect_to(services_path)
+  end
+
+  def average(service)
+    if service.reviews.count.zero?
+      'not rated'
+    else
+      sum = 0
+      service.reviews.each do |review|
+        sum += review.rating
+      end
+      sum / service.reviews.count
+    end
   end
 
   private
