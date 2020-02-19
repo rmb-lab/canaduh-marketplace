@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :set_service, :set_user
+  before_action :set_service
+  before_action :set_user
 
   def new
     @review = Review.new
@@ -9,7 +10,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.service = @service
     @review.user = @user
-    if @service.save
+    if @review.save
       redirect_to service_path(@service)
     else
       render :new
@@ -23,7 +24,7 @@ class ReviewsController < ApplicationController
   end
 
   def set_user
-    @user = @current_user
+    @user = current_user
   end
 
   def review_params

@@ -51,9 +51,24 @@
   <!-- REVIEWS -->
     <div>
       <h1>Reviews</h1>
+
+      <!-- REVIEWS AVERAGE -->
+      <% if @average == 'not rated' %>
+        <p><%= @average %></p>
+      <% else %>
+        <% @average.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+      <% end %>
+
+      <!-- REVIEWS LIST -->
       <ul>
         <% @service.reviews.each do |review| %>
-          <li> <%= review.current_user.last_name %> <%= review.title %> <%= review.rating %>
+          <li> <%= review.user.first_name %>
+            <br>
+            <%= review.title %>
+            <br>
+            <%= review.rating %>
             <br>
             <%= review.content %>
           </li>
