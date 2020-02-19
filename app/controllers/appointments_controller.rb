@@ -8,7 +8,6 @@ class AppointmentsController < ApplicationController
   end
 
   def after_sign_in_path_for(resource)
-    p "*****************************************************************************"
     p resource
   end
 
@@ -26,12 +25,26 @@ class AppointmentsController < ApplicationController
     end
   end
 
-  # DELETE #
-  # def destroy
-  #   @appointment = Appointment.find(params[:id])
-  #   @appointment.destroy
-  #   redirect_to dashboard_path
-  # end
+  def update
+    if params[:status]
+      @appointment = Appointment.find(params[:id])
+      confirm_or_not_appointment
+    else
+      @appointment = Appointment.find(params[:appointment_id])
+      @appointment.update(appointment_params)
+    end
+  end
+
+  def confirm_or_not_appointment
+    @appointment.status = params[:status]
+    redirect_to dashboard_path if @appointment.save!
+  end
+
+  def destroy
+    @appointment = Appointment.find(params[:id])
+    @appointment.destroy
+    redirect_to dashboard_path
+  end
 
   private
 
@@ -40,6 +53,6 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:date, :status, :service_id, :user_id, :rating)
+    params.require(:appointment).permit(:date, :status, :service_id, :user_id, :appointment_id, :rating)
   end
 end
