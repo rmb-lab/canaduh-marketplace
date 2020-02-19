@@ -47,5 +47,26 @@
       </div>
   <%= link_to "Back to list of all services ", services_path %>
     </div>
+
+  <!-- REVIEWS -->
+    <div>
+      <h1>Reviews</h1>
+      <ul>
+        <% @service.reviews.each do |review| %>
+          <li> <%= review.current_user.last_name %> <%= review.title %> <%= review.rating %>
+            <br>
+            <%= review.content %>
+          </li>
+        <% end %>
+      </ul>
+
+      <%= link_to new_service_review_path(@service)  do %>
+        <i class="fas fa-pen"></i> Add a Review
+      <% end %>
+
+    </div>
+
+
+
   </div>
 </div>
