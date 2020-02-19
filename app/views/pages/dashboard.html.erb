@@ -38,7 +38,7 @@
         <% @services.each do |service| %>
           <div class="dashboard-service-container">
             <h1><%= service.service_type.upcase %></h1>
-            <h2><strong>Immigration path:</strong> <%= service.service_type %></h2>
+            <h2><strong>Immigration path:</strong> <%= service.path %></h2>
             <p><strong>Description:</strong> <%= service.description %></p>
             <p><strong>Pricing:</strong> $<%= service.price %>/hour</p>
             <pre><%= link_to "Edit", "#" %> <%= link_to "Delete", "#", method: :delete %></pre>
@@ -55,8 +55,11 @@
             <div class="dashboard-appointment-container">
               <% service = Service.find(appointment.service_id) %>
               <h1><%= service.service_type.upcase %></h1>
-              <p>Immigration path: <%= service.service_type %></p>
+              <div class="appointment-card-image">
+                <img src="<%= service.user.imgUrl %>">
+              </div>
               <p><strong>Advisor:</strong> <%= User.find(appointment.user_id).first_name %> <%= User.find(appointment.user_id).last_name %></p>
+              <p><strong>Immigration path:</strong> <%= service.path %></p>
               <p><strong>Date:</strong> <%= appointment.date %></p>
               <p><strong>Status:</strong> <%= appointment.status.capitalize %></p>
               <pre><%= link_to "Edit", "#" %> <%= link_to "Delete", service_appointment_path(service, appointment), method: :delete %></pre>
