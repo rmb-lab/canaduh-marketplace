@@ -25,12 +25,6 @@ class AppointmentsController < ApplicationController
     end
   end
 
-  # DELETE #
-  # def destroy
-  #   @appointment = Appointment.find(params[:id])
-  #   @appointment.destroy
-  #   redirec
-  # endt_to dashboard_path
   def update
     if params[:status]
       @appointment = Appointment.find(params[:id])
@@ -44,6 +38,12 @@ class AppointmentsController < ApplicationController
   def confirm_or_not_appointment
     @appointment.status = params[:status]
     redirect_to dashboard_path if @appointment.save!
+  end
+
+  def destroy
+    @appointment = Appointment.find(params[:id])
+    @appointment.destroy
+    redirect_to dashboard_path
   end
 
   private

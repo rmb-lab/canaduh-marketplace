@@ -59,7 +59,7 @@
               <p><strong>Advisor:</strong> <%= User.find(appointment.user_id).first_name %> <%= User.find(appointment.user_id).last_name %></p>
               <p><strong>Date:</strong> <%= appointment.date %></p>
               <p><strong>Status:</strong> <%= appointment.status.capitalize %></p>
-              <pre><%= link_to "Edit", "#" %> <%= link_to "Delete", "dashboard_path", method: :delete %></pre>
+              <pre><%= link_to "Edit", "#" %> <%= link_to "Delete", service_appointment_path(service, appointment), method: :delete %></pre>
               <% if appointment.status == 'pending confirmation' %>
                 <button> <%= link_to "Confirm appointment", service_appointment_path(service, appointment, status: :confirmed), method: :patch %> </button>
                 <button> <%= link_to 'Decline booking', service_appointment_path(service, appointment, status: :declined), method: :patch %> </button>
