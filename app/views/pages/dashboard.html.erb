@@ -38,7 +38,7 @@
         <% @services.each do |service| %>
           <div class="dashboard-service-container">
             <h1><%= service.service_type.upcase %></h1>
-            <h2><strong>Immigration path:</strong> <%= service.path %></h2>
+            <h2><strong>Immigration path:</strong> <%= service.service_type %></h2>
             <p><strong>Description:</strong> <%= service.description %></p>
             <p><strong>Pricing:</strong> $<%= service.price %>/hour</p>
             <pre><%= link_to "Edit", "#" %> <%= link_to "Delete", "#", method: :delete %></pre>
@@ -53,12 +53,17 @@
         <% else %>
           <% @advisor_appointments.each do |appointment| %>
             <div class="dashboard-appointment-container">
-              <h1><%= Service.find(appointment.service_id).service_type.upcase %></h1>
-              <p>Immigration path:<%= Service.find(appointment.service_id).path %></p>
+              <% service = Service.find(appointment.service_id) %>
+              <h1><%= service.service_type.upcase %></h1>
+              <p>Immigration path: <%= service.service_type %></p>
               <p><strong>Advisor:</strong> <%= User.find(appointment.user_id).first_name %> <%= User.find(appointment.user_id).last_name %></p>
               <p><strong>Date:</strong> <%= appointment.date %></p>
               <p><strong>Status:</strong> <%= appointment.status.capitalize %></p>
-              <pre><%= link_to "Edit", "#" %> <%= link_to "Delete", "dahsboard_path", method: :delete %></pre>
+              <pre><%= link_to "Edit", "#" %> <%= link_to "Delete", "dashboard_path", method: :delete %></pre>
+              <% if appointment.status == 'pending confirmation' %>
+                <button> <%= link_to "Confirm appointment", service_appointment_path(service, appointment, status: :confirmed), method: :patch %> </button>
+                <button> <%= link_to 'Decline booking', service_appointment_path(service, appointment, status: :declined), method: :patch %> </button>
+              <% end %>
             </div>
           <% end %>
         <% end %>
