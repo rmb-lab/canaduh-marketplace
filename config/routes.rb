@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users
   resources :services do
     resources :appointments
+    resources :reviews, only: [:new, :create]
   end
 
   get "dashboard", to: "pages#dashboard"

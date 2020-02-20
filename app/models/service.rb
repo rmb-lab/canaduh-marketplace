@@ -3,6 +3,7 @@ class Service < ApplicationRecord
 
   belongs_to :user
   has_many :appointments, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   validates :service_type, presence: true
   validates :description, presence: true

@@ -47,5 +47,47 @@
       </div>
   <%= link_to "Back to list of all services ", services_path %>
     </div>
+
+  <!-- REVIEWS -->
+    <div>
+      <h1>Reviews</h1>
+
+      <!-- REVIEWS AVERAGE -->
+      <% if @average == 'not rated' %>
+        <p><%= @average %></p>
+      <% else %>
+        <% @average.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+      <% end %>
+
+      <!-- REVIEWS LIST -->
+      <ul>
+        <% @service.reviews.each do |review| %>
+          <li> <%= review.user.first_name %>
+            <br>
+            <%= review.created_at %>
+            <br>
+            <%= review.title %>
+            <br>
+            <% review.rating.times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+            <br>
+            <%= review.content %>
+          </li>
+        <% end %>
+      </ul>
+
+    <% if current_user.user_type == "user" %>
+      <%= link_to new_service_review_path(@service)  do %>
+        <i class="fas fa-pen"></i> Add a Review
+      <% end %>
+    <% end %>
+
+    </div>
+
+
+
   </div>
 </div>
