@@ -7,7 +7,6 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '6.0.2.1'
 gem 'redis'
-gem 'faker'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
@@ -19,6 +18,7 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'devise'
 gem 'faker'
+gem 'figaro'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
