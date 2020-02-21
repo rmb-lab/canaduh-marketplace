@@ -2,6 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   # USER_TYPE_OPTIONS = ["advisor", "user"]
+  include PgSearch::Model
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
