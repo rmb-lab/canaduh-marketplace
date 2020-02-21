@@ -25,6 +25,18 @@
         <li class="nav-item">
           <%= link_to "Dashboard", "/dashboard", class: "nav-link" %>
         </li>
+
+        <li class="nav-item">
+          <%= form_tag services_path(current_user), method: :get do %>
+            <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a service"
+          %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+        </li>
+
         <li class="nav-item dropdown">
           <%= image_tag current_user.imgUrl, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
