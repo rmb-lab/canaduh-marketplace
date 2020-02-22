@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= image_tag "https://res.cloudinary.com/p-m-b/image/upload/v1582383940/canaduh/_Logo_r38qps.png" %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,16 +25,8 @@
         <li class="nav-item">
           <%= link_to "Dashboard", "/dashboard", class: "nav-link" %>
         </li>
-
         <li class="nav-item">
-          <%= form_tag services_path(current_user), method: :get do %>
-            <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find a service"
-          %>
-            <%= submit_tag "Search", class: "btn btn-primary" %>
-          <% end %>
+          <%= link_to "Messages", "/dashboard", class: "nav-link" %>
         </li>
 
         <li class="nav-item dropdown">

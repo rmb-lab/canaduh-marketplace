@@ -1,9 +1,21 @@
 <div class="wrapper">
   <!-- HOMEPAGE BANNER WITH BUTTON -->
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/p-m-b/image/upload/v1581465999/canaduh/roberto-delgado-webb-uYx-fEOMtKo-unsplash_ygf4cf.jpg);">
-    <div class="container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/p-m-b/image/upload/v1582387301/canaduh/banner_dyx0ad.png);">
+    <div class="banner-container">
       <h1><strong>Plan your journey and connect    with expert advisors to guide you    on the path to a new life.</h1>
-      <a id="banner-link" class="btn btn-banner" href="/services">Find an advisor</a>
+      <div class="banner-search">
+        <p>
+          <%= form_tag services_path(current_user), method: :get do %>
+            <%= text_field_tag :query,
+            params[:query],
+            class: "search-field",
+            placeholder: 'Try "general consultation"'
+            %>
+            <%#= submit_tag "Search", class: "btn btn-primary" %>
+            <% end %>
+          </p>
+        <a id="banner-link" class="btn btn-banner" href="/services">Get started</a>
+      </div>
     </div>
   </div>
 
@@ -30,7 +42,7 @@
               <h1>CANADIAN CITIZENSHIP</h1>
             </a>
           </div>
-      <a href="/services">Get started <i class='fas fa-long-arrow-alt-right' style='font-size:24px'></i></a>
+      <a id="card-row-sub-link" href="/services">Browse paths <i class='fas fa-long-arrow-alt-right' style='font-size:24px'></i></a>
     </div>
     <!-- HOMEPAGE SERVICE CARD ROW -->
     <div class="slice-container">
@@ -49,7 +61,7 @@
             <h1>Comprehensive assistance</h1>
           </a>
         </div>
-      <a href="/services">All services <i class='fas fa-long-arrow-alt-right' style='font-size:24px'></i></a>
+      <a id="card-row-sub-link" href="/services">All services <i class='fas fa-long-arrow-alt-right' style='font-size:24px'></i></a>
     </div>
 
   <!-- HOMEPAGE ADVISOR CARD ROW -->
@@ -81,7 +93,10 @@
             <button class="btn-flat">Connect</button>
           </div>
         </div>
-        <p>Browse advisors <i class='fas fa-long-arrow-alt-right' style='font-size:24px'></i></p>
+        <div id="card-row-sub-link">
+          <p>Browse advisors</p>
+          <i class='fas fa-long-arrow-alt-right' style='font-size:24px'></i>
+        </div>
     </div>
     </div>
   </div>
