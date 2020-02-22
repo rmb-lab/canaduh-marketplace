@@ -62,3 +62,43 @@
   font-size: 1em;
 }
 
+#appointment-status {
+  width: 290px;
+  padding:10px 10px;
+  color: #f9fafb;
+  background-color: #fd1237;
+  border-radius: 4px;
+}
+
+.appointment-actions {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-appointment {
+  width: 140px;
+  margin-right: 10px;
+  padding: 10px 10px;
+  border: solid 1px black;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.btn-appointment:hover {
+  width: 140px;
+  color: #f9fafb;
+  padding: 10px 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 0px;
+  background: #fd1237;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.btn-appointment:hover > a {
+  color: #f9fafb;
+}

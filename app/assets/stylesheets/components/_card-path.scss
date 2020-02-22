@@ -3,8 +3,11 @@
   background-position: center;
   height: 320px;
   width: 240px;
+  margin-left: 10px;
+  margin-right: 10px;
   display: flex;
   flex-direction: column;
+  flex-shrink: 1;
   justify-content: left;
   align-items: top;
   border-radius: 10px;

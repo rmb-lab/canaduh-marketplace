@@ -39,56 +39,56 @@
               <h2>Schedule an appointment with <%= @service.user.first_name %> <%= @service.user.last_name %> </h2>
               <%= simple_form_for [@service, @appointment] do |f| %>
                 <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-                <%= f.button :submit, "Go", class: "btn btn-primary" %>
+                <button id="sweet-alert" class="btn btn-primary">Add Appointment</button>
+                <%= link_to "", dashboard_path, id: "book-appointment", class: "hidden" %>
 
+                <%#= f.button :submit, "Book appointment", class: "btn btn-primary", id:"sweet-alert" %>
               <!-- <#% end %> -->
             <% end %>
           </div>
         </div>
       </div>
-  <%= link_to "Back to list of all services ", services_path %>
-    </div>
-
   <!-- REVIEWS -->
-    <div>
+    <div class="review-container">
       <h1>Reviews</h1>
-
       <!-- REVIEWS AVERAGE -->
       <% if @average == 'not rated' %>
         <p><%= @average %></p>
-      <% else %>
-        <% @average.times do %>
-          <i class="fas fa-star"></i>
-        <% end %>
+        <% else %>
+         <p> <%= @service.reviews.count %> Reviews
+          <% @average.times do %>
+            <i id="rating-stars" class="fas fa-star"></i>
+          <% end %>
+        </p>
       <% end %>
-
       <!-- REVIEWS LIST -->
-      <ul>
         <% @service.reviews.each do |review| %>
-          <li> <%= review.user.first_name %>
-            <br>
-            <%= review.created_at %>
-            <br>
-            <%= review.title %>
-            <br>
-            <% review.rating.times do %>
-              <i class="far fa-star"></i>
+          <div class="review-card">
+            <h1 class="review-title"><%= review.title %></h1>
+                <p id="rating-stars"><% review.rating.times do %>
+                  <i class="fas fa-star"></i>
+                  <% end %>
+                </p>
+                <div class="review-card-row">
+                  <div class="review-card-image">
+                    <img src="<%= review.user.imgUrl %>">
+                  </div>
+                  <div class="review-card-content">
+                    <p><%= review.content %></p>
+                  </div>
+                </div>
+
+              <p><%= review.user.first_name %> <%= review.created_at %></p>
             <% end %>
-            <br>
-            <%= review.content %>
-          </li>
+
+      <% if current_user.user_type == "user" %>
+        <%= link_to new_service_review_path(@service)  do %>
+          <i class="fas fa-pen"></i> Add a Review
         <% end %>
-      </ul>
-
-    <% if current_user.user_type == "user" %>
-      <%= link_to new_service_review_path(@service)  do %>
-        <i class="fas fa-pen"></i> Add a Review
       <% end %>
-    <% end %>
-
     </div>
 
-
-
+      <%= link_to "Back to list of all services ", services_path %>
+    </div>
   </div>
 </div>
