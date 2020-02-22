@@ -40,6 +40,7 @@
               <%= simple_form_for [@service, @appointment] do |f| %>
                 <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
                 <%= f.button :submit, "Go", class: "btn btn-primary" %>
+
               <!-- <#% end %> -->
             <% end %>
           </div>

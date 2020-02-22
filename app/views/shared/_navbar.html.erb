@@ -23,7 +23,8 @@
         </li>
         <% end %>
         <li class="nav-item">
-          <%= link_to "Dashboard", "/dashboard", class: "nav-link" %>
+          <%= link_to "Dashboard #{Notification.unread_count(current_user)}", "/dashboard", class: "nav-link" %>
+
         </li>
 
         <li class="nav-item">

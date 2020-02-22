@@ -20,6 +20,7 @@ gem 'binding_of_caller'
 gem 'devise'
 gem 'faker'
 gem 'pg_search'
+gem 'notifications'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
