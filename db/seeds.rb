@@ -294,4 +294,16 @@ appointment4 = Appointment.create!(
   user: patrick,
 )
 
+# REVIEWS
+Review.destroy_all
+puts 'Creating "Reviews"...'
+
+review1 = Review.create!(
+  title: "Great service!!",
+  service: service1,
+  user: rmb,
+  rating: 5,
+  content: "My experience was wonderful with Canaduh! The advisor was extremely helpful and I got exactly what I needed. 5 stars and will continue on my journey!"
+)
+
 puts 'Finished!'

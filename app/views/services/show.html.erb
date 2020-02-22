@@ -52,27 +52,32 @@
       <% if @average == 'not rated' %>
         <p><%= @average %></p>
         <% else %>
+         <p> <%= @service.reviews.count %> Reviews
           <% @average.times do %>
-            <i class="fas fa-star"></i>
+            <i id="rating-stars" class="fas fa-star"></i>
           <% end %>
+        </p>
       <% end %>
       <!-- REVIEWS LIST -->
-      <ul>
         <% @service.reviews.each do |review| %>
-          <li> <%= review.user.first_name %>
-            <br>
-            <%= review.created_at %>
-            <br>
-            <%= review.title %>
-            <br>
-            <% review.rating.times do %>
-              <i class="far fa-star"></i>
+          <div class="review-card">
+            <h1 class="review-title"><%= review.title %></h1>
+                <p id="rating-stars"><% review.rating.times do %>
+                  <i class="fas fa-star"></i>
+                  <% end %>
+                </p>
+                <div class="review-card-row">
+                  <div class="review-card-image">
+                    <img src="<%= review.user.imgUrl %>">
+                  </div>
+                  <div class="review-card-content">
+                    <p><%= review.content %></p>
+                  </div>
+                </div>
+
+              <p><%= review.user.first_name %> <%= review.created_at %></p>
             <% end %>
-            <br>
-            <%= review.content %>
-          </li>
-        <% end %>
-      </ul>
+
       <% if current_user.user_type == "user" %>
         <%= link_to new_service_review_path(@service)  do %>
           <i class="fas fa-pen"></i> Add a Review
