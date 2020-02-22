@@ -18,6 +18,20 @@ User.destroy_all
 puts 'Creating "Users"...'
 
 #Advisors
+mickael = User.create!(
+  first_name:"Mickael",
+  last_name:"Merle",
+  email:"mickael@test.com",
+  password:"mickaeltest",
+  user_type: "advisor",
+  username: "mickaelm",
+  location: "Montreal",
+  user_bio: "Hey, I am Mickael, I am working as an Advisor with Canaduh for about 2 years now. As a former immigrant that faced those issues, I wanted to help and advise all the new student facing that administrative nightmare! I am mostly specialized in helping Students to get their working visa, but don't hesitate in contacting me for any information you may need.",
+  imgUrl: 'https://res.cloudinary.com/drgcg7n83/image/upload/v1582243295/Mickael_advisor.jpg',
+  specialty: ["student visa", "work visa", "permanent residency"].sample,
+  featured: true
+)
+
 belis = User.create!(
   first_name:"Belis",
   last_name:"Turegun",
@@ -32,6 +46,7 @@ belis = User.create!(
   specialty: ["student visa"].sample,
   featured: true
 )
+
 peter = User.create!(
   first_name:"Peter",
   last_name:"Segura",
@@ -46,20 +61,22 @@ peter = User.create!(
   specialty: ["work visa"].sample,
   featured: true
 )
-justin = User.create!(
-  first_name:"Justin",
-  last_name:"Maureau",
-  email:"justin@test.com",
-  password:"justintest",
+
+alex = User.create!(
+  first_name:"Alex",
+  last_name:"George",
+  email:"alex@test.com",
+  password:"alextest",
   user_type: "advisor",
-  username: "justint",
+  username: "alext",
   location: "Ottawa",
   user_bio: "I have been teaching for more than 11 years. As a result, I learned more about people and the importance motivations have on the ability to learn, retain and feel confident communicating and living in the culture of English speaking communities.
   I have experience with cultures and customs from little known provinces, as well as familiarity with the more prominent immigrant and refugee language learning communities.",
-  imgUrl: Faker::Avatar.image,
+  imgUrl: 'https://ca.slack-edge.com/T02NE0241-UD4L8PN67-fd496d39f43b-512',
   specialty: ["permanent residency"].sample,
   featured: false
 )
+
 celine = User.create!(
   first_name:"Celine",
   last_name:"Dion",
@@ -74,6 +91,7 @@ celine = User.create!(
   specialty: ["canadian citizenship"].sample,
   featured: false
 )
+
 guy = User.create!(
   first_name:"Guy",
   last_name:"Lazarte",
@@ -88,6 +106,7 @@ guy = User.create!(
   specialty: ["canadian citizenship"].sample,
   featured: true
 )
+
 victor = User.create!(
   first_name:"Victor",
   last_name:"Bianchi",
@@ -99,10 +118,11 @@ victor = User.create!(
   user_bio: "I am a dedicated and earnest individual with a passion for helping others achieve their educational goals. I have a B.A. in English and have my Graduate TESOL Certification from Cleveland State University. I am currently getting my Masters in Early Childhood Education (Pre-K - 3) and together with my TESOL training, I have multiple strategies and methods for successful early childhood and ESL instruction.
   I enjoy working with all ages and backgrounds in both TESOL, ELA, USCIS, Reading, Writing, and Speaking . I have 2+ years of classroom experience teaching both children and adults.
   I believe that respect, patience, and open communication are key to successful teaching and learning. Establishing a strong relationship with the individuals I tutor sets me apart and allows me to create personalized lesson plans and activities to fit specific educational needs.",
-  imgUrl: Faker::Avatar.image,
+  imgUrl: 'https://res.cloudinary.com/drgcg7n83/image/upload/v1582391682/victor%20bianchi.jpg',
   specialty: ["student visa"].sample,
-  featured: true
+  featured: false
 )
+
 paul = User.create!(
   first_name:"Paul",
   last_name:"McCarthy",
@@ -118,20 +138,22 @@ paul = User.create!(
   specialty: ["permanent residency", "canadian citizenship"].sample,
   featured: true
 )
-maria = User.create!(
-  first_name:"Maria",
-  last_name:"Carrey",
-  email:"maria@test.com",
-  password:"mariatest",
+
+benjamin = User.create!(
+  first_name:"Benjamin",
+  last_name:"Marquis",
+  email:"benjamin@test.com",
+  password:"benjamintest",
   user_type: "advisor",
-  username: "mariac",
+  username: "benjamint",
   location: "Vancouver",
   user_bio: "For the last 7 years I have been in private practice in a major law firm, practicing commercial and corporate law and Complex Civil Litigation. I am licensed in FL and New York. As to my education background I have graduated top of my Class from Temple University with a B.A. in Political Science and a specialization in Political Economy, and received a J.D. from Florida State University College of Law.
   I have been tutoring law students on various courses, including but not limited to: civil procedure, business law, Constitutional law, and legal writing, I also tutor undergraduate students with political science courses such as Canadian Government, Pre-law, business law, Canadian federalism, and constitutional law.",
-  imgUrl: Faker::Avatar.image,
+  imgUrl: 'https://ca.slack-edge.com/T02NE0241-ULA1N2X46-293938af097f-512',
   specialty: ["student visa", "work visa", "permanent residency", "canadian citizenship"].sample,
   featured: true
 )
+
 travis = User.create!(
   first_name:"Travis",
   last_name:"Scott",
@@ -159,17 +181,7 @@ rmb = User.create!(
   user_bio: Faker::Quote.matz,
   imgUrl: Faker::Avatar.image
 )
-mickael = User.create!(
-  first_name:"Mickael",
-  last_name:"Merle",
-  email:"mickael@test.com",
-  password:"mickaeltest",
-  user_type: "user",
-  username: "mickaelm",
-  location: "Montreal",
-  user_bio: Faker::Quote.matz,
-  imgUrl: Faker::Avatar.image
-)
+
 lou = User.create!(
   first_name:"Lou",
   last_name:"Reed",
@@ -181,6 +193,7 @@ lou = User.create!(
   user_bio: Faker::Quote.matz,
   imgUrl: Faker::Avatar.image
 )
+
 patrick = User.create!(
   first_name:"Patrick",
   last_name:"Bourget",
@@ -192,6 +205,7 @@ patrick = User.create!(
   user_bio: Faker::Quote.matz,
   imgUrl: Faker::Avatar.image
 )
+
 diana = User.create!(
   first_name:"Diana",
   last_name:"Ross",
@@ -208,62 +222,76 @@ diana = User.create!(
 Service.destroy_all
 puts 'Creating "Services"...'
 
+service5 = Service.create!(
+  user: mickael,
+  service_type: "General Consultation",
+  description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
+  path: "Canadian Citizenship",
+  price: "175"
+)
+service5 = Service.create!(
+  user: alex,
+  service_type: "General Consultation",
+  path: "Canadian Citizenship",
+  description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
+  price: "99"
+)
 service1 = Service.create!(
-  user: belis,
+  user: mickael,
   service_type: "Ongoing Assistance",
   description: "Assistance from start to finish in helping you prepare documentation for your Canadian student visa application process. Pre-planned and scheduled follow-up appointments give you the checkpoints along the way to ensure you are confident and stress free. This service guarantees a tailor fit solution to your immigration needs.",
   path: "Student Visa",
-  price: "499"
+  price: "250"
 )
 service2 = Service.create!(
-  user: travis,
-  service_type: "Test Prep",
-  description: "Professional tutoring to help prepare for your permanent residency exams. Cover the Canadian value chart, written and spoken language test prep. This service includes 3hrs of one on one sessions booked at your convenience.",
-  path: "Permanent Residency",
-  price: "99"
-)
-service3 = Service.create!(
-  user: paul,
-  service_type: "General Consultation",
-  description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
-  path: "Canadian Citizenship",
-  price: "129"
-)
-service4 = Service.create!(
-  user: maria,
-  service_type: "Test Prep",
-  path: "Work Visa",
-  description: "Professional tutoring to help prepare for your work permit process. Cover the Canadian value chart, written and spoken language test prep and job interview coaching. This service includes 3hrs of one on one sessions booked at your convenience.",
-  price: "149"
-)
-service5 = Service.create!(
-  user: justin,
-  service_type: "General Consultation",
-  path: "Canadian Citizenship",
-  description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
-  price: "99"
-)
-service6 = Service.create!(
   user: victor,
   service_type: "Ongoing Assistance",
   description: "Assistance from start to finish in helping you prepare documentation for your Canadian student visa application process. Pre-planned and scheduled follow-up appointments give you the checkpoints along the way to ensure you are confident and stress free. This service guarantees a tailor fit solution to your immigration needs.",
   path: "Student Visa",
-  price: "799"
+  price: "200"
 )
-service7 = Service.create!(
-  user: celine,
+service3 = Service.create!(
+  user: mickael,
+  service_type: "Test Prep",
+  description: "Professional tutoring to help prepare for your permanent residency exams. Cover the Canadian value chart, written and spoken language test prep. This service includes 3hrs of one on one sessions booked at your convenience.",
+  path: "Permanent Residency",
+  price: "140"
+)
+service4 = Service.create!(
+  user: benjamin,
   service_type: "Test Prep",
   path: "Work Visa",
   description: "Professional tutoring to help prepare for your work permit process. Cover the Canadian value chart, written and spoken language test prep and job interview coaching. This service includes 3hrs of one on one sessions booked at your convenience.",
-  price: "149"
+  price: "115"
 )
-service8 = Service.create!(
-  user: guy,
-  service_type: "General Consultation",
-  path: "Canadian Citizenship",
-  description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
-  price: "99"
-)
+# service6 = Service.create!(
+#   user: victor,
+#   service_type: "Ongoing Assistance",
+#   description: "Assistance from start to finish in helping you prepare documentation for your Canadian student visa application process. Pre-planned and scheduled follow-up appointments give you the checkpoints along the way to ensure you are confident and stress free. This service guarantees a tailor fit solution to your immigration needs.",
+#   path: "Student Visa",
+#   price: "799"
+# )
+# service6 = Service.create!(
+#   user: alex,
+#   service_type: "General Consultation",
+#   path: "Canadian Citizenship",
+#   description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
+#   price: "180"
+# )
+# service7 = Service.create!(
+#   user: celine,
+#   service_type: "Test Prep",
+#   path: "Work Visa",
+#   description: "Professional tutoring to help prepare for your work permit process. Cover the Canadian value chart, written and spoken language test prep and job interview coaching. This service includes 3hrs of one on one sessions booked at your convenience.",
+#   price: "149"
+# )
+# service8 = Service.create!(
+#   user: guy,
+#   service_type: "General Consultation",
+#   path: "Canadian Citizenship",
+#   description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
+#   price: "99"
+# )
 
 # APPOINTMENTS
 Appointment.destroy_all
