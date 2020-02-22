@@ -41,3 +41,30 @@
 
 // Profile components
 @import "components/profile";
+
+
+a {
+  color: black;
+  opacity: 0.8;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+  opacity: 1;
+}
+
+a:active {
+  text-decoration: none;
+  color: black;
+}
