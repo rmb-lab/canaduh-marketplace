@@ -42,7 +42,7 @@ belis = User.create!(
   location: "Montreal",
   user_bio: "I can help with learning English for those who either immigrated to an English speaking country or have re-located there to study for academic purposes. Classes typically focus on the four main skills, reading, writing, speaking and listening, involving a high degree of participation from students who must use the language in order to become familiar with it.
   I have experience of teaching all ages and abilities, from children to adult learners, at junior and high school, private language school and at university. I have taught general English, business English, and exam prep, in the Middle East, Europe, the U.S.A and Asia.",
-  imgUrl: Faker::Avatar.image,
+  imgUrl: 'https://ca.slack-edge.com/T02NE0241-UP4T26P55-8eb7b1b86ba5-72',
   specialty: ["student visa"].sample,
   featured: true
 )
@@ -73,7 +73,7 @@ alex = User.create!(
   user_bio: "I have been teaching for more than 11 years. As a result, I learned more about people and the importance motivations have on the ability to learn, retain and feel confident communicating and living in the culture of English speaking communities.
   I have experience with cultures and customs from little known provinces, as well as familiarity with the more prominent immigrant and refugee language learning communities.",
   imgUrl: 'https://ca.slack-edge.com/T02NE0241-UD4L8PN67-fd496d39f43b-512',
-  specialty: ["permanent residency"].sample,
+  specialty: ["student visa", "work visa", "permanent residency", "canadian citizenship"].sample,
   featured: false
 )
 
@@ -119,7 +119,7 @@ victor = User.create!(
   I enjoy working with all ages and backgrounds in both TESOL, ELA, USCIS, Reading, Writing, and Speaking . I have 2+ years of classroom experience teaching both children and adults.
   I believe that respect, patience, and open communication are key to successful teaching and learning. Establishing a strong relationship with the individuals I tutor sets me apart and allows me to create personalized lesson plans and activities to fit specific educational needs.",
   imgUrl: 'https://res.cloudinary.com/drgcg7n83/image/upload/v1582391682/victor%20bianchi.jpg',
-  specialty: ["student visa"].sample,
+  specialty: ["student visa", "work visa", "permanent residency", "canadian citizenship"].sample,
   featured: false
 )
 
@@ -215,83 +215,101 @@ diana = User.create!(
   username: "dianaqueen",
   location: "Montreal",
   user_bio: Faker::Quote.matz,
-  imgUrl: Faker::Avatar.image
+  imgUrl: 'https://ca.slack-edge.com/T02NE0241-UP4T26P55-8eb7b1b86ba5-72'
 )
 
 # SERVICES
 Service.destroy_all
 puts 'Creating "Services"...'
 
-service5 = Service.create!(
+service1 = Service.create!(
   user: mickael,
   service_type: "General Consultation",
   description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
   path: "Canadian Citizenship",
   price: "175"
 )
-service5 = Service.create!(
+service2 = Service.create!(
   user: alex,
   service_type: "General Consultation",
   path: "Canadian Citizenship",
   description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
   price: "99"
 )
-service1 = Service.create!(
+service3 = Service.create!(
+  user: benjamin,
+  service_type: "Ongoing Assistance",
+  path: "Canadian Citizenship",
+  description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
+  price: "140"
+)
+# -----------------------------------------------------------------------------------------------
+service4 = Service.create!(
   user: mickael,
   service_type: "Ongoing Assistance",
   description: "Assistance from start to finish in helping you prepare documentation for your Canadian student visa application process. Pre-planned and scheduled follow-up appointments give you the checkpoints along the way to ensure you are confident and stress free. This service guarantees a tailor fit solution to your immigration needs.",
   path: "Student Visa",
   price: "250"
 )
-service2 = Service.create!(
+service5 = Service.create!(
   user: victor,
-  service_type: "Ongoing Assistance",
+  service_type: "Test Prep",
   description: "Assistance from start to finish in helping you prepare documentation for your Canadian student visa application process. Pre-planned and scheduled follow-up appointments give you the checkpoints along the way to ensure you are confident and stress free. This service guarantees a tailor fit solution to your immigration needs.",
   path: "Student Visa",
   price: "200"
 )
-service3 = Service.create!(
+service6 = Service.create!(
+  user: benjamin,
+  service_type: "General Consultation",
+  description: "Assistance from start to finish in helping you prepare documentation for your Canadian student visa application process. Pre-planned and scheduled follow-up appointments give you the checkpoints along the way to ensure you are confident and stress free. This service guarantees a tailor fit solution to your immigration needs.",
+  path: "Student Visa",
+  price: "300"
+)
+# ------------------------------------------------------------------------------------------------
+service7 = Service.create!(
   user: mickael,
   service_type: "Test Prep",
   description: "Professional tutoring to help prepare for your permanent residency exams. Cover the Canadian value chart, written and spoken language test prep. This service includes 3hrs of one on one sessions booked at your convenience.",
   path: "Permanent Residency",
   price: "140"
 )
-service4 = Service.create!(
+service8 = Service.create!(
+  user: benjamin,
+  service_type: "Ongoing Assistance",
+  description: "Professional tutoring to help prepare for your permanent residency exams. Cover the Canadian value chart, written and spoken language test prep. This service includes 3hrs of one on one sessions booked at your convenience.",
+  path: "Permanent Residency",
+  price: "300"
+)
+service9 = Service.create!(
+  user: victor,
+  service_type: "Test Prep",
+  description: "Professional tutoring to help prepare for your permanent residency exams. Cover the Canadian value chart, written and spoken language test prep. This service includes 3hrs of one on one sessions booked at your convenience.",
+  path: "Permanent Residency",
+  price: "300"
+)
+# -----------------------------------------------------------------------------------------------
+service10 = Service.create!(
+  user: mickael,
+  service_type: "Ongoing Assistance",
+  path: "Work Visa",
+  description: "Professional tutoring to help prepare for your work permit process. Cover the Canadian value chart, written and spoken language test prep and job interview coaching. This service includes 3hrs of one on one sessions booked at your convenience.",
+  price: "150"
+)
+service11 = Service.create!(
+  user: alex,
+  service_type: "Ongoing Assistance",
+  path: "Work Visa",
+  description: "Professional tutoring to help prepare for your work permit process. Cover the Canadian value chart, written and spoken language test prep and job interview coaching. This service includes 3hrs of one on one sessions booked at your convenience.",
+  price: "90"
+)
+service12 = Service.create!(
   user: benjamin,
   service_type: "Test Prep",
   path: "Work Visa",
   description: "Professional tutoring to help prepare for your work permit process. Cover the Canadian value chart, written and spoken language test prep and job interview coaching. This service includes 3hrs of one on one sessions booked at your convenience.",
-  price: "115"
+  price: "75"
 )
-# service6 = Service.create!(
-#   user: victor,
-#   service_type: "Ongoing Assistance",
-#   description: "Assistance from start to finish in helping you prepare documentation for your Canadian student visa application process. Pre-planned and scheduled follow-up appointments give you the checkpoints along the way to ensure you are confident and stress free. This service guarantees a tailor fit solution to your immigration needs.",
-#   path: "Student Visa",
-#   price: "799"
-# )
-# service6 = Service.create!(
-#   user: alex,
-#   service_type: "General Consultation",
-#   path: "Canadian Citizenship",
-#   description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
-#   price: "180"
-# )
-# service7 = Service.create!(
-#   user: celine,
-#   service_type: "Test Prep",
-#   path: "Work Visa",
-#   description: "Professional tutoring to help prepare for your work permit process. Cover the Canadian value chart, written and spoken language test prep and job interview coaching. This service includes 3hrs of one on one sessions booked at your convenience.",
-#   price: "149"
-# )
-# service8 = Service.create!(
-#   user: guy,
-#   service_type: "General Consultation",
-#   path: "Canadian Citizenship",
-#   description: "Get professional advice and council from a certified immigration advisor to put you on the right path to citizenship. The service includes a personalized assesement and a tailored solution. Consultations can be conducted in person or remotely if a physical meeting is not possible. Appointments last 1 hour and a detailed citizenship plan is delivered to you digitaly within 5 business days.",
-#   price: "99"
-# )
+
 
 # APPOINTMENTS
 Appointment.destroy_all
