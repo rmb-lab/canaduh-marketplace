@@ -8,3 +8,4 @@ require("channels")
 
 import "bootstrap";
 import "../plugins/flatpickr"
+import "./sweetalert"

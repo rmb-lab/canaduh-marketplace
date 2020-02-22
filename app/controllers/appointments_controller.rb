@@ -18,11 +18,13 @@ class AppointmentsController < ApplicationController
     @appointment.service = @service
     @appointment.user = current_user
     @appointment.status = 'pending confirmation'
-    if @appointment.save
-      redirect_to dashboard_path
-    else
-      redirect_to service_path(@service)
-    end
+    @appointment.save
+
+    # if @appointment.save
+    #   redirect_to dashboard_path
+    # else
+    #   redirect_to service_path(@service)
+    # end
   end
 
   def update
