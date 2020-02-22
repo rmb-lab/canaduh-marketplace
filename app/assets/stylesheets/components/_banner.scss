@@ -22,3 +22,19 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.banner .banner-search {
+  display: flex;
+  display: row;
+}
+
+.search-field {
+  width: 350px;
+  color: #1a1a1a;
+  border: 1px solid #f9fafb;
+  padding: 8px 24px;
+  border-radius: 5px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.1s ease;
+}
