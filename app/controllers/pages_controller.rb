@@ -23,5 +23,11 @@ class PagesController < ApplicationController
     @location = current_user.location
     @bio = current_user.user_bio
     @specialty = current_user.specialty
- end
+  end
+
+  def destroy
+    @current_user_notifications = Notification.where(user_id: current_user.id)
+    @current_user_notifications.destroy_all
+    redirect_to dashboard_path
+  end
 end

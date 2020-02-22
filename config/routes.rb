@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Notifications::Engine => "/notifications"
   devise_for :users, controllers: { registrations: 'registrations'}
 
   root to: 'pages#home'
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   get "dashboard", to: "pages#dashboard"
+  delete "dashboard", to: "pages#destroy"
   get "profile", to: "pages#profile"
 
 end
