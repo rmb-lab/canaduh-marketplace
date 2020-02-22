@@ -9,6 +9,5 @@ flatpickr(".datepicker",
     inline: true,
     static: false,
     position: "above",
-
   }
 )

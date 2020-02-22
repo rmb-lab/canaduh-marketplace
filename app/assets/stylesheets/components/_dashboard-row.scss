@@ -92,7 +92,7 @@
   padding: 10px 10px;
   margin-right: 10px;
   border-radius: 4px;
-  border: 0px;
+  border: 1px solid #fd1237;
   background: #fd1237;
   transition: background 0.3s ease;
   text-decoration: none;
@@ -101,4 +101,5 @@
 
 .btn-appointment:hover > a {
   color: #f9fafb;
+  text-decoration: none;
 }
