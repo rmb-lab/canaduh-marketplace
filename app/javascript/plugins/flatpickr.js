@@ -1,7 +1,6 @@
 import flatpickr from "flatpickr"
 // import "flatpickr/dist/flatpickr.min.css" // Note this is important!
-
-import "flatpickr/dist/themes/red.css"
+import "flatpickr/dist/themes/material_red.css"
 
 flatpickr(".datepicker",
   {
