@@ -327,11 +327,49 @@ Review.destroy_all
 puts 'Creating "Reviews"...'
 
 review1 = Review.create!(
-  title: "Great service!!",
+  title: "Great service all around!!",
   service: service1,
   user: rmb,
   rating: 5,
+  content: "My experience was wonderful with Canaduh! I would be lost without Mikael Merle. The advisor was extremely helpful and I got exactly what I needed. 5 stars and will continue on my journey!"
+)
+
+review2 = Review.create!(
+  title: "What an incredible experience",
+  service: service1,
+  user: peter,
+  rating: 5,
+  content: "Canaduh has completely surpassed our expectations. Just what I was looking for. Canaduh is the real deal! Very easy to use. Canaduh did exactly what you said it does. I could probably go into sales for you. I'm good to go. I would like to personally thank you for your outstanding product. I wish I would have thought of it first. We're loving it."
+)
+
+review3 = Review.create!(
+  title: "Time saver for sure",
+  service: service1,
+  user: alex,
+  rating: 5,
+  content: "I love your system. I like Canaduh more and more each day because it makes my life a lot easier. Canaduh is exactly what our business has been lacking. No matter where you go, Canaduh is the coolest, most happening thing around!"
+)
+review4 = Review.create!(
+  title: "Quite possibly the simplest way to get",
+  service: service1,
+  user: celine,
+  rating: 5,
+  content: "The best on the net! The advisor impressed me on multiple levels. Thank you so much for your help."
+)
+review5 = Review.create!(
+  title: "Great service!!",
+  service: service1,
+  user: guy,
+  rating: 5,
   content: "My experience was wonderful with Canaduh! The advisor was extremely helpful and I got exactly what I needed. 5 stars and will continue on my journey!"
 )
+review6 = Review.create!(
+  title: "Great service!!",
+  service: service1,
+  user: benjamin,
+  rating: 5,
+  content: "I would also like to say thank you to all your staff. Advisors has completely surpassed our expectations. Advisors has got everything I need. "
+)
+
 
 puts 'Finished!'
