@@ -1,9 +1,21 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 80px;
+  // padding: 80px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
   margin-bottom: 40px;
   min-height: 50vh;
+}
+
+.banner .banner-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .banner h1 {

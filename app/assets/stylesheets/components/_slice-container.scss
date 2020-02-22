@@ -2,16 +2,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // max-width: 75vw;
   min-height: 40vh;
-  margin-left: 80px;
-  margin-right: 80px;
+  margin-left: 150px;
+  margin-right: 150px;
   margin-bottom: 40px;
 }
 
 .slice-container > h1 {
   font-family: Helvetica, sans-serif;
   font-size: 1.8em;
+  margin-left: 10px;
 }
 
 .slice-container > h2 {
@@ -19,3 +19,12 @@
   font-size: 1.4em;
 }
 
+#card-row-sub-link {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+#card-row-sub-link > i {
+  margin-left: 3px;
+}
