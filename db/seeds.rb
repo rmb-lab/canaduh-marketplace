@@ -32,21 +32,6 @@ mickael = User.create!(
   featured: true
 )
 
-belis = User.create!(
-  first_name:"Belis",
-  last_name:"Turegun",
-  email:"belis@test.com",
-  password:"belistest",
-  user_type: "advisor",
-  username: "belist",
-  location: "Montreal",
-  user_bio: "I can help with learning English for those who either immigrated to an English speaking country or have re-located there to study for academic purposes. Classes typically focus on the four main skills, reading, writing, speaking and listening, involving a high degree of participation from students who must use the language in order to become familiar with it.
-  I have experience of teaching all ages and abilities, from children to adult learners, at junior and high school, private language school and at university. I have taught general English, business English, and exam prep, in the Middle East, Europe, the U.S.A and Asia.",
-  imgUrl: 'https://ca.slack-edge.com/T02NE0241-UP4T26P55-8eb7b1b86ba5-72',
-  specialty: ["student visa"].sample,
-  featured: true
-)
-
 peter = User.create!(
   first_name:"Peter",
   last_name:"Segura",
@@ -57,7 +42,7 @@ peter = User.create!(
   location: "Toronto",
   user_bio: "I coach clients who are preparing for interviews. Some of these clients are unaccustomed to the interview process in their countries.
   By rehearsing their answers to align with what interviewers are looking for, offering feedback about body language, eye contact, smiles, etc. my clients feel more confident about the process and do better in the interview as a result.",
-  imgUrl: Faker::Avatar.image,
+  imgUrl: 'https://res.cloudinary.com/drgcg7n83/image/upload/v1582243263/user5female_aazn9s.jpg',
   specialty: ["work visa"].sample,
   featured: true
 )
@@ -87,7 +72,7 @@ celine = User.create!(
   location: "Montreal",
   user_bio: "I am a licensed attorney who attended law school at the Sorbonne University, Paris, and practiced in Belgium before moving to Montreal, where I have been practicing since 2003. I am also licensed to practice in the United Kingdom. I have experience in the French, Belgian, and Canadian legal systems.
   With a B.A. in French and a diploma in French Phonetics from University College, London, and a certification in teaching English as a Second Language, I lived and taught English as a Second Language in France for 15 years in the public school system, the University system, and professional training schools for judges and lawyers.",
-  imgUrl: Faker::Avatar.image,
+  imgUrl: 'https://res.cloudinary.com/drgcg7n83/image/upload/v1582243262/user1female_chsci0.jpg',
   specialty: ["canadian citizenship"].sample,
   featured: false
 )
@@ -102,7 +87,7 @@ guy = User.create!(
   location: "Montreal",
   user_bio: "I have a Bachelor’s Degree in Business from Humber College, a 120-hour TESOL certificate, an IELTS Specialist certificate and I am trained to teach the Canadian Citizenship test. I have taught English online to students (ages 5 to 12). I helped them learn English by speaking, reading and listening skills in a fun and engaging online learning platform. We worked on building their understanding of the English language using interactive games, TPR and fun characters.
   I currently tutor adults in a local ESL literacy program and online interactive platforms. I help them with reading, speaking, writing and listening skills through conversation, pronunciation, reading and skill-building exercises. We work on job readiness, study skills and interviewing skills. I also help them with test prep for the IELTS and TOEFL and practicing for the Canadian Citizenship test.",
-  imgUrl: Faker::Avatar.image,
+  imgUrl: 'https://res.cloudinary.com/drgcg7n83/image/upload/v1582243262/user2male_yyqhio.jpg',
   specialty: ["canadian citizenship"].sample,
   featured: true
 )
@@ -134,7 +119,7 @@ paul = User.create!(
   user_bio: "I tutor ESL Learners across a diverse range of age and work experience, such as, high school and college students, and business professionals. While working at P&G, I helped co-workers improve their English language skills and increase their confidence when speaking and listening to English.
   One colleague I tutored was preparing for the Canadian citizenship test and another was beginning a 6-month work assignment in my department. Both students’ native language was Japanese.
   I recommend specific strategies, such as, watching English speaking movies on television, at the movie theater, or through a streaming service to ESL Learners. I also recommend watching English speaking news and talk shows, and reading novels written in English language. Engaging in conversations using the English language can also increase the ESL Learner's ability to write and speak fluently.",
-  imgUrl: Faker::Avatar.image,
+  imgUrl: 'https://res.cloudinary.com/drgcg7n83/image/upload/v1582243261/user5male_m6scsw.jpg',
   specialty: ["permanent residency", "canadian citizenship"].sample,
   featured: true
 )
@@ -164,12 +149,25 @@ travis = User.create!(
   location: "Toronto",
   user_bio: "I'm a college student (legal major) who loves to teach others. I’m a native Spanish speaker, two times winner of the Real Academia Española National Championship in Cuba. I will be more than happy to become a Spanish Tutor for those in need of learning the beautiful language of Castellano (Español).
   I have full experience in tutoring Español, and its grammar. Back in my country of birth, Cuba, I was one of the top students in Spanish Literature, and Spanish Grammar. I had participated in several competitions while attending high school in Santiago de Cuba, winning first place, and second place respectively. I was one of the ten students elected to be part of the national championship in 2008 to compete with other regions of the country (Cuba).",
-  imgUrl: Faker::Avatar.image,
+  imgUrl: 'https://res.cloudinary.com/drgcg7n83/image/upload/v1582243261/user1male_ne28ng.jpg',
   specialty: ["student visa", "work visa", "permanent residency", "canadian citizenship"].sample,
   featured: false
 )
 
 #Users
+belis = User.create!(
+  first_name:"Belis",
+  last_name:"Turegun",
+  email:"belis@test.com",
+  password:"belistest",
+  user_type: "user",
+  username: "belist",
+  location: "Montreal",
+  user_bio: "I can help with learning English for those who either immigrated to an English speaking country or have re-located there to study for academic purposes. Classes typically focus on the four main skills, reading, writing, speaking and listening, involving a high degree of participation from students who must use the language in order to become familiar with it.
+  I have experience of teaching all ages and abilities, from children to adult learners, at junior and high school, private language school and at university. I have taught general English, business English, and exam prep, in the Middle East, Europe, the U.S.A and Asia.",
+  imgUrl: 'https://ca.slack-edge.com/T02NE0241-UP4T26P55-8eb7b1b86ba5-72',
+  specialty: ["student visa"].sample,
+)
 rmb = User.create!(
   first_name:"Rose",
   last_name:"Marie",
@@ -179,7 +177,7 @@ rmb = User.create!(
   username: "rmb",
   location: "Montreal",
   user_bio: Faker::Quote.matz,
-  imgUrl: Faker::Avatar.image
+  imgUrl: 'https://ca.slack-edge.com/T02NE0241-UP329CGQG-2cc8e859810d-512'
 )
 
 lou = User.create!(
@@ -191,7 +189,7 @@ lou = User.create!(
   username: "loulou",
   location: "Montreal",
   user_bio: Faker::Quote.matz,
-  imgUrl: Faker::Avatar.image
+  imgUrl: 'https://res.cloudinary.com/drgcg7n83/image/upload/v1582243262/user3female_brq6od.jpg'
 )
 
 patrick = User.create!(
@@ -203,7 +201,7 @@ patrick = User.create!(
   username: "patrickb",
   location: "Montreal",
   user_bio: Faker::Quote.matz,
-  imgUrl: Faker::Avatar.image
+  imgUrl: 'https://ca.slack-edge.com/T02NE0241-UP4T72Z71-ad292a4d361a-512'
 )
 
 diana = User.create!(
@@ -214,7 +212,8 @@ diana = User.create!(
   user_type: "user",
   username: "dianaqueen",
   location: "Montreal",
-  user_bio: Faker::Quote.matz,
+  user_bio: "I can help with learning English for those who either immigrated to an English speaking country or have re-located there to study for academic purposes. Classes typically focus on the four main skills, reading, writing, speaking and listening, involving a high degree of participation from students who must use the language in order to become familiar with it.
+  I have experience of teaching all ages and abilities, from children to adult learners, at junior and high school, private language school and at university. I have taught general English, business English, and exam prep, in the Middle East, Europe, the U.S.A and Asia.",
   imgUrl: 'https://ca.slack-edge.com/T02NE0241-UP4T26P55-8eb7b1b86ba5-72'
 )
 
