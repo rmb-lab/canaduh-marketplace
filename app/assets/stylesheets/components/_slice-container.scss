@@ -1,6 +1,8 @@
 .slice-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  // max-width: 75vw;
   min-height: 40vh;
   margin-left: 80px;
   margin-right: 80px;
