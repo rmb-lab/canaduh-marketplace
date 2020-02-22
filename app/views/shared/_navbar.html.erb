@@ -26,8 +26,12 @@
           <% if current_user.user_type == "user" %>
             <%= link_to "Dashboard", "/dashboard", class: "nav-link"%>
           <% else %>
-            <%= link_to "Dashboard #{Notification.unread_count(current_user)}", "/dashboard", method: :delete, class: "nav-link", id:"notifications-count"%>
-            <%= link_to "","#", method: :delete, class: "nav-link", id:"clean-notifications"%>
+            <% if Notification.unread_count(current_user) == 0 %>
+                <%= link_to "Dashboard", "/dashboard", method: :delete, class: "nav-link", id:"notifications-count"%>
+              <% else %>
+                <%= link_to "Dashboard #{Notification.unread_count(current_user)}", "/dashboard", method: :delete, class: "nav-link", id:"notifications-count"%>
+                <%= link_to "","#", method: :delete, class: "nav-link", id:"clean-notifications"%>
+            <% end %>
           <% end %>
         </li>
 
