@@ -1,17 +1,22 @@
 .review-container {
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
 }
 
 .review-card {
   display:flex;
   flex-direction: column;
   padding: 10px;
-  // width: 90vw;
   margin-bottom: 10px;
   border-radius: 10px;
   background: #f9fafb;
   box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.review-title {
+  font-size: 21px;
+  font-weight: 800;
 }
 
 .review-card-row {
@@ -38,19 +43,17 @@
   margin-bottom: 20px;
 }
 
+
+
 .review-card-content {
-  // width: 840px;
-  // height: 320px;
-  padding: 10px;
+  padding: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
 }
 
 
-.review-title {
-  font-size: 21px;
-}
+
 
 #rating-stars {
   margin-left: 5px;
