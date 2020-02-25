@@ -1,7 +1,12 @@
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
+@import "config/spacings";
 @import "config/bootstrap_variables";
+
+// Components
+@import "components/containers";
+
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -11,8 +16,6 @@
 // Your CSS partials
 @import "pages/index";
 
-@import "components/wrapper";
-@import "components/slice-container";
 @import "components/login-container";
 @import "components/index";
 
