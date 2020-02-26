@@ -14,12 +14,13 @@
   <body>
     <!-- <p class="notice"><%= notice %></p> -->
     <!-- <p class="alert"><%= alert %></p> -->
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <div class="wrapper-container">
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
 
-    <%= yield %>
-    <%= render 'shared/footer' %>
-    <%= javascript_pack_tag 'application' %>
-
+      <%= yield %>
+      <%= render 'shared/footer' %>
+      <%= javascript_pack_tag 'application' %>
+    </div>
   </body>
 </html>

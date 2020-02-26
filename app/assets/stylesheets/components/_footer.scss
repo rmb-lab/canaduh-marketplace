@@ -1,12 +1,10 @@
 .footer {
-  background: #1a1a1a;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  height: 300px;
-  width: 100vw;
-  padding: 20px 150px;
-  color: #f9fafb;
+  flex-direction: row;
+  background-size: cover;
+  padding: 40px $sides 0px;
+  background: $black;
+  color: $offwhite;
 }
 
 .footer-column {
